@@ -12,6 +12,7 @@ then
 else
   echo "> sudo docker stop $CURRENT_PID"   # 현재 구동중인 Docker 컨테이너가 있다면 모두 중지
   sudo docker stop $CURRENT_PID
+  y
   sudo docker system prune -a
   sleep 5
 fi
