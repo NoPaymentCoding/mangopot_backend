@@ -19,4 +19,4 @@ fi
 cd /home/ec2-user/app/step2/zip/
 
 echo ">docker-compose up" >> /home/ec2-user/app/step2/deploy.log
-docker-compose up
+nohup docker-compose up > $REPOSITORY/nohup.out 2>&1 &
