@@ -25,16 +25,12 @@ public class ProjectServiceImpl implements ProjectService{
     @Override
     public boolean createProject(String title, String context, LocalDate deadline, String userName, String locName) {
         Optional<Location> location = locationService.findLocation(locName);
-        List<Location> locationList = locationService.findAllLocation();
-        log.info("location list: " + locationList);
         if (location.isEmpty()) { //지역명이 잘못된 경우
-            log.info("loc_name: " + locName);
             log.info("지역명 오류");
             return false;
         }
 
         Optional<UserInfo> user = userInfoService.findUser(userName);
-
         if (user.isEmpty()) {
             log.info("유저가 없음");
             return false;
