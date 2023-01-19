@@ -40,3 +40,10 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### properties ###
+application-real-DB.properties
+application-RDS.properties
+
+### test ###
+test

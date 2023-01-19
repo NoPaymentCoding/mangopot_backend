@@ -1,43 +1,45 @@
 package mangopot_backend.mangopot_backend.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "project")
 @Data
-@Builder
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 public class Project {
     @Id
     @GeneratedValue
-    private Long prj_id;
+    private Long prjId;
 
     private String title;
     private String context;
-    private LocalDateTime due_date;
-    private boolean is_done;
-    @GeneratedValue
+    private LocalDate deadline;
+    private boolean isDone;
     private LocalDateTime date;
+    private boolean isDeleted;
 
     //project 외래키
     //user_info로 바꾸기
-//    private User user;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private UserInfo userInfo;
     @ManyToOne
     @JoinColumn(name = "loc_id")
     private Location location;
 
-    public Project(String title, String context, LocalDateTime due_date, Location location) {
-        this.is_done = false;
+    @Builder
+    public Project(String title, String context, LocalDate deadline, UserInfo userInfo, Location location) {
+        this.date = LocalDateTime.now();
         this.title = title;
         this.context = context;
-        this.due_date = due_date;
+        this.deadline = deadline;
+        this.userInfo = userInfo;
         this.location = location;
     }
 }
