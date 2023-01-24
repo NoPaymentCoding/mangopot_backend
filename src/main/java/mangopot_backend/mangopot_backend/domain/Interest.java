@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "location_info")
+@Table(name = "interest_info")
 @Data
 @ToString
 @AllArgsConstructor
