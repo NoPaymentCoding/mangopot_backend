@@ -25,4 +25,9 @@ public class Interest {
     String name;
     String logoImg;
 
+    public Interest(String name, String logoImg) {
+        this.name = name;
+        this.logoImg = logoImg;
+    }
+
 }

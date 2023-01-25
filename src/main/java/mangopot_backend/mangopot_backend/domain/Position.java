@@ -24,4 +24,9 @@ public class Position {
 
     String name;
     String logoImg;
+
+    public Position(String name, String logoImg) {
+        this.name = name;
+        this.logoImg = logoImg;
+    }
 }
