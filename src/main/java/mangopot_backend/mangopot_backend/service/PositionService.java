@@ -3,6 +3,7 @@ package mangopot_backend.mangopot_backend.service;
 import lombok.RequiredArgsConstructor;
 import mangopot_backend.mangopot_backend.domain.Position;
 import mangopot_backend.mangopot_backend.repository.JpaPositionRepository;
+import mangopot_backend.mangopot_backend.repository.JpaProjectInterestRelationRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

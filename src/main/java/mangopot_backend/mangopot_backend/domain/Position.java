@@ -20,10 +20,10 @@ public class Position {
 
     @Id
     @GeneratedValue
-    int posId;
+    private int posId;
 
-    String name;
-    String logoImg;
+    private String name;
+    private String logoImg;
 
     public Position(String name, String logoImg) {
         this.name = name;

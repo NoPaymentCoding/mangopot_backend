@@ -31,7 +31,7 @@ public class ProjectForm {
     ArrayList<String> interest;
 
     @NotNull
-    ArrayList<Map<String, Integer>> position;
+    ArrayList<PositionPair> position;
 
 
 
