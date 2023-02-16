@@ -28,7 +28,6 @@ public class ProjectController {
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
         Optional<Project> project = projectService.createProject(form.title, form.context, form.deadline, form.userNickName, form.locName);
-        //interest, position create method 추가해야 함
 
         if (project.isEmpty()) {
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
