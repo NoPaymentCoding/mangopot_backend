@@ -5,25 +5,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "interest_info")
 @Data
 @ToString
-@AllArgsConstructor
+//@AllArgsConstructor
 @NoArgsConstructor
 public class Interest {
 
     @Id
     @GeneratedValue
-    int inId;
+    private int inId;
 
-    String name;
-    String logoImg;
+    private String name;
+    private String logoImg;
 
     public Interest(String name, String logoImg) {
         this.name = name;

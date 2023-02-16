@@ -24,9 +24,10 @@ public class LocationController {
 
     @ResponseBody
     @PostMapping()
-    public ResponseEntity createLocation(@RequestBody String locName) {
+    public ResponseEntity createLocation(@RequestBody LocationForm form) {
 
-        boolean location = locationService.createLocation("인천");
+        log.info("locName"+form.locName);
+        boolean location = locationService.createLocation(form.locName);
 
         if (!location) {
             return new ResponseEntity(HttpStatus.BAD_REQUEST);

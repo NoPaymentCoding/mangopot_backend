@@ -6,17 +6,15 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
-@Table(name = "project_interest_relation")
+@Table(name = "project_position_relation")
 @Data
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@IdClass(ProjectInterestRelationId.class)
-public class ProjectInterestRelation {
-
+@IdClass(ProjectPositionRelationId.class)
+public class ProjectPositionRelation {
     @Id
     @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "prj_id")
@@ -24,6 +22,8 @@ public class ProjectInterestRelation {
 
     @Id
     @ManyToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "in_id")
-    private Interest interest;
+    @JoinColumn(name = "pos_id")
+    private Position position;
+
+    private int total;
 }
