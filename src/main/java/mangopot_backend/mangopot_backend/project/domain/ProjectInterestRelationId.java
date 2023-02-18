@@ -1,4 +1,4 @@
-package mangopot_backend.mangopot_backend.domain;
+package mangopot_backend.mangopot_backend.project.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

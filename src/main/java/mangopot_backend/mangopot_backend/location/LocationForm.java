@@ -1,4 +1,4 @@
-package mangopot_backend.mangopot_backend.controller;
+package mangopot_backend.mangopot_backend.location;
 
 import lombok.Data;
 

@@ -1,6 +1,6 @@
-package mangopot_backend.mangopot_backend.repository;
+package mangopot_backend.mangopot_backend.location;
 
-import mangopot_backend.mangopot_backend.domain.Location;
+import mangopot_backend.mangopot_backend.location.Location;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

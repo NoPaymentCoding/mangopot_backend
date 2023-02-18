@@ -1,12 +1,10 @@
-package mangopot_backend.mangopot_backend.domain;
+package mangopot_backend.mangopot_backend.interest;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "interest_info")

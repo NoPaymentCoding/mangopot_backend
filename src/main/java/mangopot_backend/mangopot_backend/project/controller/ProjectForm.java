@@ -1,13 +1,11 @@
-package mangopot_backend.mangopot_backend.controller;
+package mangopot_backend.mangopot_backend.project.controller;
 
 import lombok.Data;
-import mangopot_backend.mangopot_backend.domain.Location;
+import mangopot_backend.mangopot_backend.project.vo.PositionPair;
 
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Map;
 
 @Data
 public class ProjectForm {

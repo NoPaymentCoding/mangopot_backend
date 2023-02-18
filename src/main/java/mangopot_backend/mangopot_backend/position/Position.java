@@ -1,4 +1,4 @@
-package mangopot_backend.mangopot_backend.domain;
+package mangopot_backend.mangopot_backend.position;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

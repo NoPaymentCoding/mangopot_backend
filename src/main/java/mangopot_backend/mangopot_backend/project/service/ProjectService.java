@@ -1,14 +1,10 @@
-package mangopot_backend.mangopot_backend.service;
+package mangopot_backend.mangopot_backend.project.service;
 
-import lombok.RequiredArgsConstructor;
-import mangopot_backend.mangopot_backend.controller.PositionPair;
-import mangopot_backend.mangopot_backend.domain.*;
-import org.springframework.stereotype.Service;
+import mangopot_backend.mangopot_backend.project.vo.PositionPair;
+import mangopot_backend.mangopot_backend.project.domain.Project;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 public interface ProjectService {
@@ -24,6 +20,8 @@ public interface ProjectService {
     //project 조회
     public Optional<Project> findProjectById(Long proId);
 
+    public List<Project> findProjectAll();
+
     //project-interest 생성
     public boolean createProjectInterestRelation(List<String> interestName, Optional<Project> project);
 
@@ -31,8 +29,9 @@ public interface ProjectService {
 
     public List<Project> findProjectByUser();
 
-    public List<Project> findProjectByInterest(String interestName);
-    public List<Project> findProjectByLocation();
+    public List<Project> findProjectByInterest(List<String> interestNames);
+    public List<Project> findProjectByLocation(String locationName);
+    public List<Project> findProjectByPosition(List<String> positionName);
 
 
 

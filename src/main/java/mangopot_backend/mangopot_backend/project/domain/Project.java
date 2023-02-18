@@ -1,9 +1,10 @@
-package mangopot_backend.mangopot_backend.domain;
+package mangopot_backend.mangopot_backend.project.domain;
 
 import lombok.*;
+import mangopot_backend.mangopot_backend.location.Location;
+import mangopot_backend.mangopot_backend.userInfo.UserInfo;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 

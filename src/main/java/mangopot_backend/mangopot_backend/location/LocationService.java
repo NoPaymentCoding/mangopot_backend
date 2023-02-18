@@ -1,8 +1,8 @@
-package mangopot_backend.mangopot_backend.service;
+package mangopot_backend.mangopot_backend.location;
 
 import lombok.RequiredArgsConstructor;
-import mangopot_backend.mangopot_backend.domain.Location;
-import mangopot_backend.mangopot_backend.repository.JpaLocationRepository;
+import mangopot_backend.mangopot_backend.location.Location;
+import mangopot_backend.mangopot_backend.location.JpaLocationRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

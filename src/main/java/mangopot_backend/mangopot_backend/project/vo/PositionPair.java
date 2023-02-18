@@ -1,4 +1,4 @@
-package mangopot_backend.mangopot_backend.controller;
+package mangopot_backend.mangopot_backend.project.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

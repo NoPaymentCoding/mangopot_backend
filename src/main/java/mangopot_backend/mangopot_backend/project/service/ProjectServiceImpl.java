@@ -1,17 +1,25 @@
-package mangopot_backend.mangopot_backend.service;
+package mangopot_backend.mangopot_backend.project.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import mangopot_backend.mangopot_backend.controller.PositionPair;
-import mangopot_backend.mangopot_backend.domain.*;
-import mangopot_backend.mangopot_backend.repository.*;
+import mangopot_backend.mangopot_backend.interest.Interest;
+import mangopot_backend.mangopot_backend.interest.InterestService;
+import mangopot_backend.mangopot_backend.location.Location;
+import mangopot_backend.mangopot_backend.location.LocationService;
+import mangopot_backend.mangopot_backend.position.Position;
+import mangopot_backend.mangopot_backend.position.PositionService;
+import mangopot_backend.mangopot_backend.project.vo.PositionPair;
+import mangopot_backend.mangopot_backend.project.domain.*;
+import mangopot_backend.mangopot_backend.project.repository.JpaProjectInterestRelationRepository;
+import mangopot_backend.mangopot_backend.project.repository.JpaProjectPositionRelationRepository;
+import mangopot_backend.mangopot_backend.project.repository.JpaProjectRepository;
+import mangopot_backend.mangopot_backend.userInfo.UserInfo;
+import mangopot_backend.mangopot_backend.userInfo.UserInfoService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @Slf4j
@@ -65,6 +73,13 @@ public class ProjectServiceImpl implements ProjectService{
     public boolean deleteProject(Long pro_id) {
         return false;
     }
+
+    @Override
+    public List<Project> findProjectAll(){
+        List<Project> projectList = projectRepository.findAll();
+        return projectList;
+    }
+
 
     @Override
     public Optional<Project> findProjectById(Long proId) {
@@ -129,20 +144,30 @@ public class ProjectServiceImpl implements ProjectService{
     }
 
     @Override
-    public List<Project> findProjectByInterest(String interestName) {
-        Optional<Interest> interest = interestService.findInterestByName(interestName);
-        if (interest.isEmpty()) {
-            log.info("interest 존재하지 않음");
-            return null;
-        }
-        List<Project> projectList = projectInterestRelationRepository.findByInterest(interest.get());
+    public List<Project> findProjectByInterest(List<String> interestNames) {
+        List<Integer> interestList = interestService.findInterestIdByNames(interestNames);
+        List<Project> projectList = projectInterestRelationRepository.findByInterest(interestList);
 
         return projectList;
     }
 
     @Override
-    public List<Project> findProjectByLocation() {
-        return null;
+    public List<Project> findProjectByLocation(String locationName) {
+        Optional<Location> location = locationService.findLocation(locationName);
+        if (location.isEmpty()) {
+            return null;
+        }
+        List<Project> projectList = projectRepository.findByLocation(location.get());
+
+        return projectList;
+    }
+
+    @Override
+    public List<Project> findProjectByPosition(List<String> positionName){
+        List<Integer> positionIdsByNames = positionService.findPositionIdsByNames(positionName);
+
+        List<Project> projectList = projectPositionRelationRepository.findByPositionId(positionIdsByNames);
+        return projectList;
     }
 
     public void clearRepo(){
