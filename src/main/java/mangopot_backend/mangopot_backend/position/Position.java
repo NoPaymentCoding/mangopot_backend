@@ -13,7 +13,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "position_info")
 @Data
-@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 public class Position {

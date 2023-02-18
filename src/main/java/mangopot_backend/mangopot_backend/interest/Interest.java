@@ -9,8 +9,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "interest_info")
 @Data
-@ToString
-//@AllArgsConstructor
 @NoArgsConstructor
 public class Interest {
 
