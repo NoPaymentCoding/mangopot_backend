@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface JpaProjectPositionRelationRepository extends JpaRepository<ProjectPositionRelation, Integer> {
+public interface JpaProjectPositionRelationRepository extends JpaRepository<ProjectPositionRelation, Long> {
 //    @Query(value = "select p from Project as p join ProjectPositionRelation as ppr" +
 //            " on p.prjId=ppr.project.prjId where ppr.position.posId = :positionId")
 //    List<Project> findByPosition(@Param("positionId") int positionId);

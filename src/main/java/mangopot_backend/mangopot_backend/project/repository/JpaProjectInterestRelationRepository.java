@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface JpaProjectInterestRelationRepository extends JpaRepository<ProjectInterestRelation, Integer>{
+public interface JpaProjectInterestRelationRepository extends JpaRepository<ProjectInterestRelation, Long>{
 //    List<Project> findByInterest(Interest interest);
     @Query(value = "select p from Project as p join ProjectInterestRelation as pir" +
             " on p.prjId=pir.project.prjId where pir.interest.inId in (:interests)")
